@@ -26,7 +26,7 @@ const addIngredient = (state, action) => {
     return updateObject(state, updatedState);
 };
 
-const removeIngredient = (action, state) => {
+const removeIngredient = (state, action) => {
     const updatedIng = {[action.ingredientName]: state.ingredients[action.ingredientName] - 1};
     const updatedIngs = updateObject(state.ingredients, updatedIng);
     const updatedSt = {
@@ -57,13 +57,9 @@ const fetchIngredientsFailed = (state, action) => {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.ADD_INGREDIENT: return addIngredient(state, action);
-
         case actionTypes.REMOVE_INGREDIENT: return removeIngredient(state, action);
-
         case actionTypes.SET_INGREDIENTS: return setIngredients(state, action);
-
         case actionTypes.FETCH_INGREDIENTS_FAILED: return fetchIngredientsFailed(state, action);
-
         default: return state;
     }
 };
