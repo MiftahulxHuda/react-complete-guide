@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
+import PizzaImage from '../components/PizzaImage/PizzaImage';
+
 class Pizza extends Component {
-    render() {
+    render () {
         return (
             <div>
                 <h1>The Pizza</h1>
-                <p>Awesome users on board of this course!</p>
+                <PizzaImage />
             </div>
         );
     }
